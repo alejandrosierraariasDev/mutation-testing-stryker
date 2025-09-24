@@ -1,4 +1,4 @@
-export function calculateTax(price, isTaxExempt) {
+function calculateTax(price, isTaxExempt) {
     if (isTaxExempt === true) {
         return price;
     }
@@ -9,3 +9,5 @@ export function calculateTax(price, isTaxExempt) {
         return price * 1.10;
     }
 }
+
+module.exports = { calculateTax };

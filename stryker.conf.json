@@ -1,0 +1,32 @@
+{
+  "$schema": "./node_modules/@stryker-mutator/core/schema/stryker-schema.json",
+  "mutator": {
+    "plugins": ["@stryker-mutator/javascript-mutator", "@stryker-mutator/typescript-mutator"],
+    "excludedMutations": []
+  },
+  "packageManager": "npm",
+  "reporters": [
+    "progress",
+    "html"
+  ],
+  "testRunner": "jest",
+  "coverageAnalysis": "perTest",
+  "jest": {
+    "projectType": "custom",
+    "configFile": "jest.config.js"
+  },
+  "mutate": [
+    "src/js/**/*.js",
+    "!src/js/**/__tests__/**/*.js",
+    "src/react/**/*.ts",
+    "!src/react/**/*.test.ts",
+    "src/angular/**/*.ts",
+    "!src/angular/**/*.spec.ts",
+    "src/vue/**/*.vue",
+    "src/vue/**/*.ts",
+    "!src/vue/**/*.test.ts"
+  ],
+  "ignoreStatic": true,
+  "concurrency": 4,
+  "timeoutMS": 60000
+}
