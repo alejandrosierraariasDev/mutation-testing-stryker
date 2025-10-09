@@ -137,10 +137,22 @@ Después de ejecutar las pruebas de mutación:
 2. **Mutantes sobrevivientes**: Cambios que no fueron detectados por las pruebas
 3. **Cobertura de código**: Áreas del código que necesitan más pruebas
 
-## 📚 Recursos
+### Stryker (stryker.conf.json)
+- Usa Jest como corredor de pruebas
+- Genera informes HTML detallados
+- Análisis de cobertura por prueba
+- Configuración optimizada para rendimiento
 
-- [Documentación de Stryker](https://stryker-mutator.io/)
-- [Guía de Jest](https://jestjs.io/)
-- [Introducción a las pruebas de mutación](https://en.wikipedia.org/wiki/Mutation_testing)
-- [Babel para pruebas](https://babeljs.io/docs/en/)
+## 🔍 Configuración de Stryker
+
+### Thresholds de Calidad
+
+El archivo [stryker.conf.json](cci:7://file:///home/alex/WebstormProjects/mutation-testing-stryker/stryker.conf.json:0:0-0:0) incluye umbrales de calidad que garantizan que el código cumpla con los estándares del proyecto:
+
+```json
+"thresholds": {
+  "high": 90,    // Verde - Excelente calidad
+  "low": 75,     // Amarillo - Calidad aceptable
+  "break": 75    // Si el score es < 75%, el comando falla
+}
 

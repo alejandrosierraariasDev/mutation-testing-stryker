@@ -1,0 +1,35 @@
+stages:
+  - install
+  - test
+  - mutation
+
+variables:
+  NODE_ENV: test
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+
+before_script:
+  - npm ci
+
+unit_tests:
+  stage: test
+  script:
+    - npm run test -- --ci --runInBand
+  artifacts:
+    when: always
+    reports:
+      junit: junit.xml
+
+mutation_test:
+  stage: mutation
+  script:
+    # Ejecuta Stryker
+    - npx stryker run
+  artifacts:
+    when: always
+    paths:
+      - reports/mutation/html
+  allow_failure: false
