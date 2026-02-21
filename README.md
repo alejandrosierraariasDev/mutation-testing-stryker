@@ -1,4 +1,4 @@
-# 🧪 Mutation Testing con Stryker y Jest
+# 🧪 Mutation Testing with Stryker and Jest
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
@@ -9,150 +9,148 @@
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
 
-## Lo que Stryker te da
+## What Stryker Gives You
 
-Tener un alto porcentaje de cobertura de código solo te dice que tus pruebas se están ejecutando. No te garantiza que sean buenas. Una prueba puede pasar, pero ser completamente inútil porque no valida la lógica de negocio.
+Having a high code coverage percentage only tells you that your tests are running. It doesn't guarantee they are good. A test can pass but be completely useless because it doesn't validate the business logic.
 
-Stryker te ayuda a detectar estas pruebas inútiles. Funciona de la siguiente manera:
-- Introduce pequeños "errores" o mutantes en tu código fuente (por ejemplo, cambia un `&&` a un `||` o un `>` a un `>=`).
-- Ejecuta tus pruebas unitarias contra este código mutado.
-- Si una prueba falla, significa que detectó el error y el mutante es asesinado (¡bien! ✅).
-- Si la prueba sigue pasando, significa que no detectó el error. El mutante sobrevive, revelando una debilidad en tu suite de pruebas.
+Stryker helps you detect these useless tests. It works as follows:
+- Introduces small "errors" or mutants in your source code (for example, changes a `&&` to an `||` or a `>` to a `>=`).
+- Runs your unit tests against this mutated code.
+- If a test fails, it means it detected the error and the mutant is killed (good! ✅).
+- If the test still passes, it means it didn't detect the error. The mutant survives, revealing a weakness in your test suite.
 
-### Por qué es vital para el desarrollo moderno
+### Why it's vital for modern development
 
-Las tecnologías de front-end modernas, con su naturaleza reactiva y manejo de estados, son propensas a errores sutiles. Stryker te obliga a escribir pruebas que no solo cubran líneas de código, sino que también validen su comportamiento y lógica.
+Modern front-end technologies, with their reactive nature and state management, are prone to subtle errors. Stryker forces you to write tests that not only cover lines of code but also validate their behavior and logic.
 
-En resumen, usar Stryker te permite:
-- Evaluar la calidad de tus pruebas, no solo la cantidad.
-- Encontrar casos de borde que tus tests no cubrieron.
-- Mejorar la robustez de tu código base, reduciendo el riesgo de regresiones.
+In summary, using Stryker allows you to:
+- Evaluate the quality of your tests, not just the quantity.
+- Find edge cases that your tests didn't cover.
+- Improve the robustness of your code base, reducing the risk of regressions.
 
-Stryker es la herramienta que convierte tus tests de una simple lista de "pasó/falló" en una poderosa herramienta para garantizar la calidad real de tu software. Es la diferencia entre tener un sistema de seguridad y saber que ese sistema de seguridad realmente funciona. 🛡️
+Stryker is the tool that transforms your tests from a simple "passed/failed" list into a powerful tool to ensure the real quality of your software. It's the difference between having a security system and knowing that security system actually works. 🛡️
 
 ---
 
-Este proyecto demuestra cómo implementar pruebas de mutación en TypeScript utilizando Stryker, Jest y Vue.js. Las pruebas de mutación son una técnica avanzada que ayuda a mejorar la calidad de tus pruebas al introducir pequeños cambios (mutaciones) en tu código y verificar si tus pruebas pueden detectar estos cambios.
+This project demonstrates how to implement mutation testing in TypeScript using Stryker, Jest, and Vue.js. Mutation testing is an advanced technique that helps improve the quality of your tests by introducing small changes (mutations) in your code and verifying if your tests can detect these changes.
 
-## 📋 Características
+## 📋 Features
 
-- Configuración completa de Stryker con Jest y TypeScript
-- Ejemplos prácticos de pruebas de mutación
-- Soporte para múltiples frameworks: React, Angular y Vue.js
-- Componentes React y Vue.js con pruebas unitarias
-- Servicios con lógica de negocio testeable
-- Generación de informes HTML detallados
-- Configuración optimizada de Babel, TypeScript y Jest para pruebas
-- Soporte para JSX/TSX en React
-- Configuración de TypeScript lista para React y Vue
+- Complete Stryker configuration with Jest and TypeScript
+- Practical examples of mutation testing
+- Support for multiple frameworks: React, Angular, and Vue.js
+- React and Vue.js components with unit tests
+- Services with testable business logic
+- Detailed HTML report generation
+- Optimized Babel, TypeScript, and Jest configuration for testing
+- Support for JSX/TSX in React
+- TypeScript configuration ready for React and Vue
 
-## 🏗️ Estructura del Proyecto
+## 🏗️ Project Structure
 
 ```
 src/
-├── angular/             # Código específico de Angular
-│   └── services/        # Servicios de Angular
+├── angular/             # Angular-specific code
+│   └── services/        # Angular services
 │
-├── js/                  # Utilidades JavaScript puras
-│   └── utils/           # Funciones de utilidad compartidas
+├── js/                  # Pure JavaScript utilities
+│   └── utils/           # Shared utility functions
 │
-├── react/               # Lógica específica de React
-│   └── services/        # Servicios para componentes React
+├── react/               # React-specific logic
+│   └── services/        # Services for React components
 │
-└── vue/                 # Componentes y lógica de Vue.js
-    └── components/      # Componentes Vue reutilizables
+└── vue/                 # Vue.js components and logic
+    └── components/      # Reusable Vue components
 ```
 
-## 📂 Estructura de pruebas
+## 📂 Test Structure
 
-Las pruebas siguen la convención de estar junto al código que prueban:
-- `*.test.js` para pruebas de JavaScript
-- `*.test.ts` para pruebas de TypeScript
-- `*.spec.ts` para pruebas de Angular
-- `__tests__/` para agrupar pruebas relacionadas
+Tests follow the convention of being next to the code they test:
+- `*.test.js` for JavaScript tests
+- `*.test.ts` for TypeScript tests
+- `*.spec.ts` for Angular tests
+- `__tests__/` for grouping related tests
 
-## 🚀 Empezando
+## 🚀 Getting Started
 
-### Requisitos previos
+### Prerequisites
 
-- Node.js (v16 o superior)
-- npm (viene con Node.js)
-- TypeScript (v4.9 o superior)
+- Node.js (v16 or higher)
+- npm (comes with Node.js)
+- TypeScript (v4.9 or higher)
 
-### Instalación
+### Installation
 
-
-
-Instala las dependencias:
+Install the dependencies:
    ```
    npm install
    ```
 
-## 🧪 Comandos útiles
+## 🧪 Useful Commands
 
-- **Ejecutar pruebas unitarias**:
+- **Run unit tests**:
   ```
   npm test
   ```
 
-- **Ejecutar pruebas con cobertura**:
+- **Run tests with coverage**:
   ```
   npm run test:coverage
   ```
 
-- **Ejecutar pruebas de mutación con Stryker**:
+- **Run mutation tests with Stryker**:
   ```
   npx stryker run
   ```
 
-- **Ejecutar pruebas en modo observación**:
+- **Run tests in watch mode**:
   ```
   npm run test:watch
   ```
 
-- **Ejecutar pruebas de mutación con Stryker**:
+- **Run mutation tests with Stryker**:
   ```
   npm run stryker
   ```
-  Esto generará un informe detallado en `reports/mutation/mutation.html`
+  This will generate a detailed report in `reports/mutation/mutation.html`
 
-## 🔧 Configuración
+## 🔧 Configuration
 
 ### Babel (babel.config.js)
-Configuración para soportar las últimas características de JavaScript:
-- `@babel/preset-env` para compatibilidad con Node.js actual
-- Plugins para características de clase
-- Optimizado para pruebas
+Configuration to support the latest JavaScript features:
+- `@babel/preset-env` for compatibility with current Node.js
+- Plugins for class features
+- Optimized for testing
 
 ### Stryker (stryker.conf.json)
-- Usa Jest como corredor de pruebas
-- Genera informes HTML detallados
-- Análisis de cobertura por prueba
-- Configuración optimizada para rendimiento
+- Uses Jest as test runner
+- Generates detailed HTML reports
+- Per-test coverage analysis
+- Performance-optimized configuration
 
-## 📊 Entendiendo los resultados
+## 📊 Understanding the Results
 
-Después de ejecutar las pruebas de mutación:
-1. **Puntuación de mutación**: Porcentaje de mutaciones detectadas
-2. **Mutantes sobrevivientes**: Cambios que no fueron detectados por las pruebas
-3. **Cobertura de código**: Áreas del código que necesitan más pruebas
+After running mutation tests:
+1. **Mutation score**: Percentage of detected mutations
+2. **Surviving mutants**: Changes that were not detected by tests
+3. **Code coverage**: Areas of code that need more tests
 
 ### Stryker (stryker.conf.json)
-- Usa Jest como corredor de pruebas
-- Genera informes HTML detallados
-- Análisis de cobertura por prueba
-- Configuración optimizada para rendimiento
+- Uses Jest as test runner
+- Generates detailed HTML reports
+- Per-test coverage analysis
+- Performance-optimized configuration
 
-## 🔍 Configuración de Stryker
+## 🔍 Stryker Configuration
 
-### Thresholds de Calidad
+### Quality Thresholds
 
-El archivo [stryker.conf.json](cci:7://file:///home/alex/WebstormProjects/mutation-testing-stryker/stryker.conf.json:0:0-0:0) incluye umbrales de calidad que garantizan que el código cumpla con los estándares del proyecto:
+The [stryker.conf.json](cci:7://file:///home/alex/WebstormProjects/mutation-testing-stryker/stryker.conf.json:0:0-0:0) file includes quality thresholds that ensure the code meets project standards:
 
 ```json
 "thresholds": {
-  "high": 90,    // Verde - Excelente calidad
-  "low": 75,     // Amarillo - Calidad aceptable
-  "break": 75    // Si el score es < 75%, el comando falla
+  "high": 90,    // Green - Excellent quality
+  "low": 75,     // Yellow - Acceptable quality
+  "break": 75    // If score is < 75%, command fails
 }
-
+```
